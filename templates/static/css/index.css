@@ -1,0 +1,39 @@
+
+table {
+    border-collapse: collapse;        
+    width: 100%;
+  }
+th {
+    background-color:black;
+ }
+td{
+    padding: 50px 0px;
+   
+}
+#index-table{
+    border-radius:20px;
+}
+
+.table-container{
+    margin: 7% 20% 5% 20%;
+
+}
+
+.index-select{
+    
+    border-color:lightgray;
+    border-radius: 5px;
+    padding: 5px;
+
+    background-color:white;
+}
+
+.fixed-table{
+    overflow-y: auto;
+    height: 500px;
+    position: sticky
+}
+
+
+
+

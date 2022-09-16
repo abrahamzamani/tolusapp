@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>kkkk</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="img-container">
+    <img class="icon" src="static/images/logo1.svg" alt="icon">
+</div>
+<div class="site-form">
+    <form action="/addkeywords", method="post">
+        <input type="text" placeholder="enter link"class="form-control form-control-lg input1" name="link" autocomplete="off" required>
+        <br>
+        <select name="category" id="" class ="form-select form-select-lg" required>
+            <option disabled selected value="">choose post category</option>
+            {% for category in categories %}
+                <option value={{category}}>{{category}}</option>
+            {% endfor %}
+        </select>
+        <button type="submit" class="btn btn-primary btn-lg submit-btn">+ keywords</button>
+    </form>
+
+</div>
+
+
+
+{% endblock %}

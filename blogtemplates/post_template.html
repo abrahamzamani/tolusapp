@@ -1,0 +1,9 @@
+<h1>{{title}}: [{{modifier}}]</h1>
+<br>
+{% for data in post_data %}
+    <h3>{{data['question']}}</h3>
+    <br>
+    <p>{{data['answer']}}</p>
+    <br>
+    <br>
+{% endfor %}

@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>home</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="img-container">
+    <img class="icon" src="static/images/logo1.svg" alt="icon">
+</div>
+<div class="create-profile-form">
+    <form action="/createprofile", method="post">
+        <input type="text" placeholder="website name" name="website_name" class="form-control form-control-lg input1" required>
+        <br>
+        <input type="text" placeholder="wordpress username" name="wp_user_name" class="form-control form-control-lg input1" required>
+        <br>
+        <input type="text" placeholder="website link" name="website_link" class="form-control form-control-lg input1" required>
+        <br>
+        <input type="text" placeholder="application password" name="application_password" class="form-control form-control-lg input1" required>
+        <br>
+        <button type="submit" class="btn btn-primary btn-lg create-profile-button">create</button>
+    </form>
+</div>
+
+
+{% endblock %}
+

@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>home</title>
+
+{% endblock %}
+
+{% block body %}
+<div class="table-container fixed-table">
+    <table class="table table-hover able-borderless" id="index-table" >
+        <thead class="table-light">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Website</th>
+            <th scope="col">Category</th>
+            <th scope="col">No. of keywords</th>
+            <th scope="col">Action</th>
+          </tr>
+        </thead>
+        <tbody>
+        {% for details in get_post_details %}
+            <form action="/" method="post" class="form-inline" target="_blank">
+                <tr>
+                    <th scope="row">{{loop.index}}</th>
+                    <td class="data-table-one">
+                        <p>{{ details[0] }}</p>
+                        <input type="hidden" name="website_name" value="{{ details[0] }}">
+                    </td>
+                    <td class="data-table-one">
+                        <p>{{ details[1] }}</p>
+                        <input type="hidden" name="category" value="{{ details[1] }}">
+                    </td>
+                   {% if details[2] != 0: %}
+                        <td class="data-table-one">
+                            <p>{{ details[2] }}</p>
+                        </td>
+                        <td class="data-table-action">
+                            <select name="post_num" class="index-select" required >
+                                <option disabled selected value="">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button type="submit" class="btn btn-primary btn-lg all-button index-action-btn">create</button>
+                        </td>
+                    {% else: %}
+                        <td class="data-table-one">
+                            <p>0</p>
+                        </td>
+                        <td class="data-table-action">
+                            <select name="post_num" class="index-select" >
+                                <option disabled selected value="">0</option>
+                                <option value="1">1</option>
+                                <option value="2">2</option>
+                                <option value="5">5</option>
+                            </select>
+                            <button type="submit" disabled class="btn btn-primary btn-lg all-button index-action-btn">create</button>
+                        </td>
+                    {% endif %}
+                        
+                  </tr>
+            </form>
+        {% endfor %}
+        </tbody>
+      </table>
+</div>
+ 
+{% endblock %}

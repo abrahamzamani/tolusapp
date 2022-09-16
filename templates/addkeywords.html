@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>add keywords</title>
+
+{% endblock %}
+
+{% block body %}
+
+<div class="img-container">
+    <img class="icon" src="static/images/logo1.svg" alt="icon">
+</div>
+<div class="site-form">
+   
+        <form class="" action="/addkeywords" method="post">
+            <select name="website" id="" class ="form-select form-select-lg" required>
+                <option disabled selected value="">choose a website</option>
+                {% for name in website_names %}
+                    <option value={{name}}>{{name}}</option>
+                {% endfor %}
+            </select>
+            <br>
+            <button type="submit" class="btn btn-primary btn-lg submit-btn">submit</button>
+        </form>
+</div>
+
+
+{% endblock %}
